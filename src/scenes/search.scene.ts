@@ -65,8 +65,6 @@ const filterCanteens = (canteen: Canteen, query: string) => {
 const cmd = async (ctx: CommandCallbackContext) => {
   const query = ctx.message.text.split(" ").slice(1).join(" ");
 
-  console.log(query);
-
   if (!query) return ctx.reply("Bitte gib einen Suchbegriff ein!");
 
   let canteens = await openMensa.getCanteens();
