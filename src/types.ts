@@ -18,4 +18,44 @@ interface RegexCallbackContext
     Update.CallbackQueryUpdate<CallbackQuery>
   > {}
 
-export { CommandCallbackContext, RegexCallbackContext };
+interface Canteen {
+  id: number;
+  name: string;
+  city: string;
+  address: string;
+  coordinates: [number, number] | null;
+}
+
+interface CanteenSearchParams {
+  ids?: number[];
+  "near[lat]"?: number;
+  "near[lng]"?: number;
+  "near[dist]"?: number;
+  hasCoordinates?: boolean;
+}
+
+interface Day {
+  date: string;
+  closed: false;
+}
+
+interface Meal {
+  id: number;
+  name: string;
+  notes: string[];
+  prices: {
+    students: number;
+    employees: number;
+    others: number;
+  };
+  category: string;
+}
+
+export {
+  CommandCallbackContext,
+  RegexCallbackContext,
+  Canteen,
+  CanteenSearchParams,
+  Day,
+  Meal,
+};

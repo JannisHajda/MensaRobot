@@ -25,6 +25,17 @@ import {
 
 // search/page/query
 bot.action(/search:(-?\d+):([\w\s]+)?/, (ctx) => searchAction(ctx));
+bot.command("search", (ctx) => searchCommand(ctx));
+
+import {
+  cmd as canteenCommand,
+  action as canteenAction,
+} from "./scenes/canteen.scene";
+
+// canteen/canteenId/date/searchPage/query
+bot.action(/canteen:(\d+):(\d{4}-\d{2}-\d{2}):(-?\d+):([\w\s]+)?/, (ctx) =>
+  canteenAction(ctx)
+);
 
 bot.launch();
 
